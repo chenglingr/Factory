@@ -28,7 +28,7 @@ namespace SQLServerDAL
 	public partial class Admin:IAdmin
 	{
 		public Admin()
-		{}
+		{ }
 		#region  Method
 
 
