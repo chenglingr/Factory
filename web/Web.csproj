@@ -102,6 +102,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\Add.aspx" />
     <Content Include="Admin\add1.html" />
+    <Content Include="Admin\js\add.js" />
     <Content Include="Admin\List.aspx" />
     <Content Include="Admin\Modify.aspx" />
     <Content Include="Admin\Show.aspx" />
@@ -114,6 +115,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\ashx\ADD.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -170,6 +172,10 @@
     <Compile Include="Admin\Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ashx\ADD.ashx.cs">
+      <DependentUpon>ADD.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Class1.cs" />
     <Compile Include="Admin\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,6 +255,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{9ded703a-15d1-4b1a-8213-7403a8461432}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServerDAL\SQLServerDAL.csproj">
+      <Project>{a96de34b-6ed7-48bd-b684-e0e5bf3d43a4}</Project>
+      <Name>SQLServerDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
