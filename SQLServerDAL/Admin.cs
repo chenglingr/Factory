@@ -42,7 +42,7 @@ namespace SQLServerDAL
 			StringBuilder strSql1=new StringBuilder();
 			StringBuilder strSql2=new StringBuilder();
 			if (model.LoginID != null)
-			{
+			{ 
 				strSql1.Append("LoginID,");
 				strSql2.Append("'"+model.LoginID+"',");
 			}
