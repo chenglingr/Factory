@@ -21,7 +21,7 @@ namespace web.Admin.ashx
             DataSet ds= bll.GetList("");
             ds.Tables[0].TableName = "Admin";
             //返回列表
-            string json=   Web.DataConvertJson.DataTable2Json (ds.Tables[0]);
+            string json=Web.DataConvertJson.DataTable2Json (ds.Tables[0]);
             DataSet ds1 = new DataSet();
 
          

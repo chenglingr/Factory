@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Text;
 using System.Data;
-
+using System.Web.Script.Serialization;//添加本引用。
 namespace Web
 {
 
@@ -18,6 +18,13 @@ namespace Web
         /// </summary>
         /// <param name="o">对象</param>
         /// <returns>json字符串</returns>
+        public static string NewsObjectToJSON(object model)
+        {
+          
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            string jsonString = serializer.Serialize(model);
+            return jsonString;
+        }
 
         public static string NewsObjectToJSON(object o, string jsonName)
         {
