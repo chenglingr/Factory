@@ -1,22 +1,18 @@
 ﻿
-
 $(document).ready(function () {
-
-   
-    //注册提交按钮单击事件
+     //注册提交按钮单击事件
     $("#BtnOK").click(function () {
 
-        var txtUserName = $("#txtLoginID").val(); //保存文本框对象，提高效率
-     
+        var txtUserName = $("#txtLoginID").val(); //获取文本框的值
         var txtPassWord = $("#txtLoginPWD").val();
         var txtRealName = $("#AdminName").val();
         var adminSex = true;
-        var obj = document.getElementsByName("sex");
-        if (obj[1].checked) { adminSex =false; }
+      
+        var sexCheck = $('input:radio[name="sex"]:checked').val();//得到单选按钮选中项的值
+        if (sexCheck == '女') { adminSex = false; }
         if ("" != txtUserName && "" != txtPassWord && "" != txtRealName)
-        { //简单的验证放在客户端，减少服务器压力
+        {   //简单的验证放在客户端，减少服务器压力
             //利用post方式向服务器请求数据 
-
             $.ajax({
                 type: "Post",
                 url: "ashx/ADD.ashx",
@@ -26,15 +22,12 @@ $(document).ready(function () {
                 success: function (data) {
                    //返回类型为text时 要处理一下 
                     var json = eval('(' + data + ')');
-                 
                     alert(json.info);
                 },
                 error: function (err) {
                     alert(err);
                 }
             });
-           
-
         }
         else
         {
@@ -44,7 +37,7 @@ $(document).ready(function () {
 
     //注册重置按钮单击事件
     $("#btnReset").click(function () {
-         $("#txtLoginID").val(''); //保存文本框对象，提高效率
+         $("#txtLoginID").val(''); 
          $("#txtLoginPWD").val('');
          $("#AdminName").val('');
     });
