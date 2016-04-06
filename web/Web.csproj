@@ -122,6 +122,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="jquery+json+ashx\json-1.gif" />
     <Content Include="jquery+json+ashx\json-2.gif" />
+    <Content Include="jquery+json+ashx\school.sql" />
+    <Content Include="jquery+json+ashx\工厂三层技术文档.swf" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -131,6 +133,7 @@
     <Content Include="Admin\ashx\SHOW.ashx" />
     <Content Include="jquery+json+ashx\jquery+json+ashx.doc" />
     <Content Include="Admin\ashx\LOGIN.ashx" />
+    <Content Include="jquery+json+ashx\工厂三层模式操作步骤.docx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstrap-table.js" />
