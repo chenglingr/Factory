@@ -101,22 +101,36 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\Add.aspx" />
-    <Content Include="Admin\add1.html" />
+    <Content Include="Admin\add.html" />
     <Content Include="Admin\js\add.js" />
+    <Content Include="Admin\js\list1.js" />
+    <Content Include="Admin\js\list.js" />
+    <Content Include="Admin\js\show.js" />
+    <Content Include="Admin\List1.html" />
     <Content Include="Admin\List.aspx" />
+    <Content Include="Admin\List.html" />
     <Content Include="Admin\Modify.aspx" />
     <Content Include="Admin\Show.aspx" />
+    <Content Include="Admin\show.html" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-table.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="jquery+json+ashx\json-1.gif" />
+    <Content Include="jquery+json+ashx\json-2.gif" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Admin\ashx\ADD.ashx" />
+    <Content Include="Admin\ashx\LIST.ashx" />
+    <Content Include="Admin\ashx\SHOW.ashx" />
+    <Content Include="jquery+json+ashx\jquery+json+ashx.doc" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Scripts\bootstrap-table.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -175,7 +189,12 @@
     <Compile Include="Admin\ashx\ADD.ashx.cs">
       <DependentUpon>ADD.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Class1.cs" />
+    <Compile Include="Admin\ashx\LIST.ashx.cs">
+      <DependentUpon>LIST.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ashx\SHOW.ashx.cs">
+      <DependentUpon>SHOW.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +216,7 @@
     <Compile Include="Admin\Show.aspx.designer.cs">
       <DependentUpon>Show.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\DataConvertJson.cs" />
     <Compile Include="App_Code\MessageBox.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
