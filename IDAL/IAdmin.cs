@@ -28,10 +28,17 @@ namespace IDAL
 		/// 增加一条数据
 		/// </summary>
 		int Add(Model.Admin model);
-		/// <summary>
-		/// 更新一条数据
-		/// </summary>
-		bool Update(Model.Admin model);
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">登录名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns>返回用户编号。没有此用户返回-1</returns>
+        int Login(string name,string pwd);
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        bool Update(Model.Admin model);
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>

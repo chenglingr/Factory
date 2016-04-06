@@ -105,10 +105,12 @@
     <Content Include="Admin\js\add.js" />
     <Content Include="Admin\js\list1.js" />
     <Content Include="Admin\js\list.js" />
+    <Content Include="Admin\js\login.js" />
     <Content Include="Admin\js\show.js" />
     <Content Include="Admin\List1.html" />
     <Content Include="Admin\List.aspx" />
     <Content Include="Admin\List.html" />
+    <Content Include="Admin\login.html" />
     <Content Include="Admin\Modify.aspx" />
     <Content Include="Admin\Show.aspx" />
     <Content Include="Admin\show.html" />
@@ -128,6 +130,7 @@
     <Content Include="Admin\ashx\LIST.ashx" />
     <Content Include="Admin\ashx\SHOW.ashx" />
     <Content Include="jquery+json+ashx\jquery+json+ashx.doc" />
+    <Content Include="Admin\ashx\LOGIN.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstrap-table.js" />
@@ -191,6 +194,9 @@
     </Compile>
     <Compile Include="Admin\ashx\LIST.ashx.cs">
       <DependentUpon>LIST.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ashx\LOGIN.ashx.cs">
+      <DependentUpon>LOGIN.ashx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ashx\SHOW.ashx.cs">
       <DependentUpon>SHOW.ashx</DependentUpon>

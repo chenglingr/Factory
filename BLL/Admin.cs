@@ -31,12 +31,22 @@ namespace BLL
 		private readonly IAdmin dal=DataAccess.CreateAdmin();
 		public Admin()
 		{}
-		#region  BasicMethod
+        #region  BasicMethod
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">登录名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns>返回用户编号。没有此用户返回-1</returns>
+        public int Login(string name, string pwd)
+        {
 
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public int  Add(Model.Admin model)
+            return dal.Login(name,pwd);
+        }
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public int  Add(Model.Admin model)
 		{
 			return dal.Add(model);
 		}
