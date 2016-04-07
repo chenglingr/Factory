@@ -28,7 +28,7 @@ namespace SQLServerDAL
 	public partial class Grade:IGrade
 	{
 		public Grade()
-		{}
+		{ }
 		#region  Method
 
 
