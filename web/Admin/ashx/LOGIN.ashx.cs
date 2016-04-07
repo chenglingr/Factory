@@ -10,12 +10,18 @@ namespace web.Admin.ashx
     /// </summary>
     public class LOGIN : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
+      /*
+       1. 在ashx中，Session都要使用context.Session,读写方法是这样的：
+　　      context.Session["xxx"]="aaa"和aaa=context.Session["xxx"].ToString（）
+       2. 在ashx文件中，要对Session进行成功的读写，应该在使用 Session的class后增加接口IRequiresSessionState 
+       （添加时可能提示添加命名空间 using System.Web.SessionState 的引用），否则 context .Session ["xxx"]读出的总是null
+      */
 
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
-            string json = "{'info':'登录失败','ID':-1}";
+            string  json = "{'info':'登录失败','ID':-1}";
 
             //获取GET方法传递参数：Request.QueryString["参数名称"];
             //获取POST方法传递参数：Request.Form["参数名称"];
@@ -25,7 +31,7 @@ namespace web.Admin.ashx
             BLL.Admin bll = new BLL.Admin();
             int n =bll.Login(txtUserName, txtPassWord);
             //返回单个文字信息
-            if (n > 0) { json = "{'info':'增加数据成功！','ID':"+n+"}"; context.Session["ID"] =n; }
+            if (n > 0) { json = "{'info':'登录成功！','ID':"+n+"}"; context.Session["ID"] =n; }
             context.Response.Write(json);
 
         }
