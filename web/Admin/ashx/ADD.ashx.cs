@@ -8,7 +8,7 @@ namespace web.Admin.ashx
     /// <summary>
     /// ADD 的摘要说明
     /// </summary>
-    public class ADD : IHttpHandler
+    public class ADD : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -19,25 +19,41 @@ namespace web.Admin.ashx
 
             //获取GET方法传递参数：Request.QueryString["参数名称"];
             //获取POST方法传递参数：Request.Form["参数名称"];
-            string txtUserName =context.Request.Form["UserName"]; //保存文本框对象，提高效率
-            string txtPassWord = context.Request.Form["PassWord"];
-            string txtRealName = context.Request.Form["RealName"];
-            string adminSex = context.Request.Form["adminSex"];
+
+            string action= context.Request.Form["Action"];
+
+            if (action == "Add")
+            {
+                string txtUserName = context.Request.Form["UserName"]; //保存文本框对象，提高效率
+                string txtPassWord = context.Request.Form["PassWord"];
+                string txtRealName = context.Request.Form["RealName"];
+                string adminSex = context.Request.Form["adminSex"];
 
 
-            Model.Admin model = new Model.Admin();
-            model.LoginID = txtUserName;
-            model.LoginPWD = txtPassWord;
-            model.AdminName = txtRealName;
-            model.sex = false;
-            if (adminSex == "true") { model.sex = true; }
+                Model.Admin model = new Model.Admin();
+                model.LoginID = txtUserName;
+                model.LoginPWD = txtPassWord;
+                model.AdminName = txtRealName;
+                model.sex = false;
+                if (adminSex == "true") { model.sex = true; }
 
 
                 BLL.Admin bll = new BLL.Admin();
-                int n= bll.Add(model);
+                int n = bll.Add(model);
                 //返回单个文字信息
-                if (n > 0) { json = "{'info':'增加数据成功,编号是："+n+"'}"; }
-        
+                if (n > 0) { json = "{'info':'增加数据成功,编号是：" + n + "'}"; }
+            }
+            else if (action == "Load")
+            {
+                if (context.Session["ID"] == null)
+                {
+                    json = "{'info':'未登录'}";
+                }
+
+            }
+
+            context.Response.Write(json);
+
         }
 
         public bool IsReusable
