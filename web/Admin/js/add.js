@@ -1,5 +1,7 @@
 ﻿
 $(document).ready(function () {
+
+
      //注册提交按钮单击事件
     $("#BtnOK").click(function () {
 

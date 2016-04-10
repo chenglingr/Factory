@@ -112,6 +112,7 @@
     <Content Include="Admin\List.html" />
     <Content Include="Admin\login.html" />
     <Content Include="Admin\Modify.aspx" />
+    <Content Include="Admin\nav.html" />
     <Content Include="Admin\Show.aspx" />
     <Content Include="Admin\show.html" />
     <Content Include="Contact.aspx" />

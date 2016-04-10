@@ -17,8 +17,8 @@
                     //返回类型为text时 要处理一下 
                     var json = eval('(' + data + ')');
                  //   $("#result").val(json); 
-                    alert(json.info + " " + json.ID);
-                    window.location.href = "list.html";
+                    alert(json.info + " 编号为：" + json.ID);
+                    window.location.href = "list1.html";
                 },
                 error: function (err) {
                     alert(err);

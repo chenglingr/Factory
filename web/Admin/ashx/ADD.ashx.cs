@@ -32,11 +32,12 @@ namespace web.Admin.ashx
             model.sex = false;
             if (adminSex == "true") { model.sex = true; }
 
-            BLL.Admin bll = new BLL.Admin();
-            int n= bll.Add(model);
-            //返回单个文字信息
-            if (n > 0) { json = "{'info':'增加数据成功,编号是："+n+"'}"; }
-            context.Response.Write(json);
+
+                BLL.Admin bll = new BLL.Admin();
+                int n= bll.Add(model);
+                //返回单个文字信息
+                if (n > 0) { json = "{'info':'增加数据成功,编号是："+n+"'}"; }
+        
         }
 
         public bool IsReusable

@@ -17,7 +17,16 @@
                 {
                     //用json返回数据行时
                     $.each(data.Admin, function (index, item) {
-                        tbody.append("<p><a href=\"show.html?UserID=" + item.adminID + "\">" + item.LoginID + "</a>" + item.AdminName + "</p>");
+                        var str = '<tr>\
+                            <td style="text-align: center; ">\
+                                 <a href="show.html?UserID='
+                                     + item.adminID + '">'+ item.LoginID 
+                                 + '</a>\
+                            </td>\
+                           <td style="text-align: center; ">' + item.AdminName
+                           + '</td>\
+                        <\tr>';
+                        tbody.append(str);
                     });
                 }
                
