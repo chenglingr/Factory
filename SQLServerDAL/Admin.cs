@@ -28,15 +28,38 @@ namespace SQLServerDAL
 	public partial class Admin:IAdmin
 	{
 		public Admin()
-		{ }
-		#region  Method
+		{  }
+        #region  Method
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="name">登录名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns>返回用户编号。没有此用户返回-1</returns>
+        public int Login(string name, string pwd)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select  top 1 adminID ");
+            strSql.Append(" from Admin ");
+            strSql.Append(" where LoginID='" +name + "' and LoginPWD='"+pwd+"'");
 
+            object obj=   DbHelperSQL.GetSingle(strSql.ToString());
+            if (obj == null)
+            {
+                return -1;
+            }
+            else
+            {
+                return Convert.ToInt32(obj);
+            }
 
+        
+        }
 
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public int Add(Model.Admin model)
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public int Add(Model.Admin model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();

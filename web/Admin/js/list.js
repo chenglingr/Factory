@@ -7,11 +7,19 @@
           
             dataType: "json",
             success: function (data) {
+
                 var tbody = $('#showlist');
-                //用json返回数据行时
-                $.each(data.Admin, function (index, item) {
-                    tbody.append("<p><a href=\"show.html?UserID=" + item.adminID + "\">" + item.LoginID + "</a>" + item.AdminName + "</p>");
-                });
+                if (jQuery.isEmptyObject(data)) { //json数据为空
+                    alert("请先登录");
+                    window.location.href = "login.html";
+                }
+                else
+                {
+                    //用json返回数据行时
+                    $.each(data.Admin, function (index, item) {
+                        tbody.append("<p><a href=\"show.html?UserID=" + item.adminID + "\">" + item.LoginID + "</a>" + item.AdminName + "</p>");
+                    });
+                }
                
             },
             error: function (err) {

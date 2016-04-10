@@ -9,16 +9,21 @@
             success: function (data) {
               //  var tbody = $('#showlist');
                 //用json返回数据行时
-             
-                $('#table').bootstrapTable({
-                    data: data.Admin,
-                    pagination: true, //分页
-                    search: true, //显示搜索框
-                    pageSize: 4,
-                    showRefresh: true,
-                    striped: true,
-                
-                });
+                if (jQuery.isEmptyObject(data)) {
+                    alert("请先登录");
+                    window.location.href = "login.html";
+                }
+                else {
+                    $('#table').bootstrapTable({
+                        data: data.Admin,
+                        pagination: true, //分页
+                        search: true, //显示搜索框
+                        pageSize: 4,
+                        showRefresh: true,
+                        striped: true,
+
+                    });
+                }
                
             },
             error: function (err) {
