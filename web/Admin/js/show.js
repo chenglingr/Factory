@@ -3,7 +3,12 @@
     var r = window.location.search.substr(1).match(reg);  //匹配目标参数
     if (r != null) return unescape(r[2]); return null; //返回参数值
 }
-
+/*
+js定义多行字符串
+var htmlSTring = '<div style="font-color:red;">\
+  This is a string.\
+</div>';
+*/
 $(document).ready(function () {
     var Userid = getUrlParam('UserID');
     if (Userid != null) {
@@ -16,7 +21,53 @@ $(document).ready(function () {
             success: function (data) {
                 var tbody = $('#showinfo');
                 //用json返回一个对象数据
-                tbody.append(data.LoginID +"<br/>" +data.AdminName);
+             //   tbody.append(data.LoginID + "<br/>" + data.AdminName);
+
+                var outStr= '<table cellSpacing="0" cellPadding="0" width="100%" border="0">\
+	            <tr>\
+	            <td height="45" width="30%" align="right">\
+		            编号\
+	            ：</td>\
+	            <td height="45" width="*" align="left">\
+		            <span id="MainContent_lbladminID">' + data.adminID +
+                    ' </span>\
+	            </td></tr>\
+	            <tr>\
+	            <td height="45" width="30%" align="right">\
+		            登录名\
+	            ：</td>\
+	            <td height="45" width="*" align="left">\
+		            <span id="MainContent_lblLoginID">' + data.LoginID +
+                    '</span>\
+	            </td></tr>\
+	            <tr>\
+	            <td height="45" width="30%" align="right">\
+		            密码\
+	            ：</td>\
+	            <td height="45" width="*" align="left">\
+		            <span id="MainContent_lblLoginPWD">' + data.LoginPWD +
+                    '</span>\
+	            </td></tr>\
+	            <tr>\
+	            <td height="45" width="30%" align="right">\
+		            真实姓名\
+	            ：</td>\
+	            <td height="45" width="*" align="left">\
+		            <span id="MainContent_lblAdminName">' + data.AdminName +
+                    '</span>\
+	            </td></tr>\
+	            <tr>\
+	            <td height="45" width="30%" align="right">\
+		            性别\
+	            ：</td>\
+	            <td height="45" width="*" align="left">\
+		            <span id="MainContent_lblsex">' + data.sex+
+                    '</span>\
+	            </td></tr>\
+            </table>';
+
+                tbody.append(outStr);
+
               //  alert(data.LoginID + data.AdminName);
             },
             error: function (err) {
