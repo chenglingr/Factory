@@ -1,5 +1,23 @@
 ﻿
 $(document).ready(function () {
+    //页面加载后判断是否登陆
+    $.ajax({
+        type: "post",
+        url:"ashx/add.ashx",
+        data: { "Action": "Load" },
+        dataType: "text",
+        success: function (data) {
+            //返回类型为text时 要处理一下 
+            var json = eval('(' + data + ')');
+            if (json.info == '未登录')
+            {
+                alert('请先登录');
+                window.location.href = "login.html";
+            }
+        },
+
+    });
+
      //注册提交按钮单击事件
     $("#BtnOK").click(function () {
 
@@ -17,7 +35,7 @@ $(document).ready(function () {
                 type: "Post",
                 url: "ashx/ADD.ashx",
                 //方法传参的写法一定要对，str为形参的名字,str2为第二个形参的名字   
-                data: { "UserName": txtUserName, "PassWord": txtPassWord, "RealName": txtRealName, "adminSex": adminSex },
+                data: {"Action":"Add", "UserName": txtUserName, "PassWord": txtPassWord, "RealName": txtRealName, "adminSex": adminSex },
                 dataType: "text",
                 success: function (data) {
                    //返回类型为text时 要处理一下 
