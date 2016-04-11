@@ -2,7 +2,7 @@
    
         $.ajax({
             type: "Post",
-            url: "ashx/LIST.ashx",
+            url: "ashx/LIST1.ashx",
             //方法传参的写法一定要对，str为形参的名字,str2为第二个形参的名字   
             data: { "Action": "Show" },
             dataType: "json",
