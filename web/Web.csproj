@@ -136,7 +136,6 @@
     <Content Include="Admin\ashx\LOGIN.ashx" />
     <Content Include="jquery+json+ashx\jquery修改追加删除html网页中的内容示例.docx" />
     <Content Include="jquery+json+ashx\工厂三层模式操作步骤.docx" />
-    <Content Include="jquery+json+ashx\BBS工厂三层-项目.rar" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstrap-table.js" />
