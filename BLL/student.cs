@@ -31,12 +31,15 @@ namespace BLL
 		private readonly Istudent dal=DataAccess.Createstudent();
 		public student()
 		{}
-		#region  BasicMethod
-
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public int  Add(Model.student model)
+        #region  BasicMethod
+        public DataSet GetNameNoList(int Top)
+        {
+            return dal.GetNameNoList(Top);
+        }
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public int  Add(Model.student model)
 		{
 			return dal.Add(model);
 		}

@@ -23,11 +23,12 @@ namespace IDAL
 	/// </summary>
 	public interface Istudent
 	{
-		#region  成员方法
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		int Add(Model.student model);
+        DataSet GetNameNoList(int top);
+        #region  成员方法
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        int Add(Model.student model);
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>

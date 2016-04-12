@@ -49,7 +49,7 @@
             {
                 $.ajax({
                     type: "post",
-                    url: "ashx/LIST.ashx",
+                    url: "ashx/LIST1.ashx",
                     data: { "Action": "Del", "DelNums": DelNumS },
                     dataType: "text",
                     success: function (data) {

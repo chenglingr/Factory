@@ -21,49 +21,17 @@ $(document).ready(function () {
             success: function (data) {
                 var tbody = $('#showinfo');
                 //用json返回一个对象数据
-             //   tbody.append(data.LoginID + "<br/>" + data.AdminName);
+                //   tbody.append(data.LoginID + "<br/>" + data.AdminName);
+                var sex = '女';
+                if (data.sex == true) { sex = '男'; }
+            
 
                 var outStr= '<table cellSpacing="0" cellPadding="0" width="100%" border="0">\
-	            <tr>\
-	            <td height="45" width="30%" align="right">\
-		            编号\
-	            ：</td>\
-	            <td height="45" width="*" align="left">\
-		            <span id="MainContent_lbladminID">' + data.adminID +
-                    ' </span>\
-	            </td></tr>\
-	            <tr>\
-	            <td height="45" width="30%" align="right">\
-		            登录名\
-	            ：</td>\
-	            <td height="45" width="*" align="left">\
-		            <span id="MainContent_lblLoginID">' + data.LoginID +
-                    '</span>\
-	            </td></tr>\
-	            <tr>\
-	            <td height="45" width="30%" align="right">\
-		            密码\
-	            ：</td>\
-	            <td height="45" width="*" align="left">\
-		            <span id="MainContent_lblLoginPWD">' + data.LoginPWD +
-                    '</span>\
-	            </td></tr>\
-	            <tr>\
-	            <td height="45" width="30%" align="right">\
-		            真实姓名\
-	            ：</td>\
-	            <td height="45" width="*" align="left">\
-		            <span id="MainContent_lblAdminName">' + data.AdminName +
-                    '</span>\
-	            </td></tr>\
-	            <tr>\
-	            <td height="45" width="30%" align="right">\
-		            性别\
-	            ：</td>\
-	            <td height="45" width="*" align="left">\
-		            <span id="MainContent_lblsex">' + data.sex+
-                    '</span>\
-	            </td></tr>\
+	         	<tr>  <td height="45" width="30%" align="right"> 编号：</td> <td > ' + data.adminID + ' </td></tr> \
+                <tr>  <td height="45" align="right"> 登录名：</td> <td> ' + data.LoginID + ' </td></tr> \
+	          	<tr>  <td height="45" align="right"> 密码：</td> <td> ' + data.LoginPWD + ' </td></tr> \
+                <tr>  <td height="45" align="right"> 真实姓名：</td> <td> ' + data.AdminName +  ' </td></tr> \
+	            <tr>  <td height="45" align="right"> 性别：</td> <td> ' + sex +  ' </td></tr>\
             </table>';
 
                 tbody.append(outStr);
