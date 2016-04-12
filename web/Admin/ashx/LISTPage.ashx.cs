@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+
 namespace web.Admin.ashx
 {
     /// <summary>
-    /// l1 的摘要说明
+    /// LIST 的摘要说明
     /// </summary>
-    public class list1 : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+    public class LISTPage : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)

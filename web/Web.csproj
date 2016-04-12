@@ -102,13 +102,16 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\Add.aspx" />
     <Content Include="Admin\add.html" />
+    <Content Include="Admin\ashx\LIST.ashx" />
     <Content Include="Admin\js\add.js" />
-    <Content Include="Admin\js\list2.js" />
+    <Content Include="Admin\js\index.js" />
+    <Content Include="Admin\js\listPage.js" />
     <Content Include="Admin\js\list1.js" />
     <Content Include="Admin\js\list.js" />
     <Content Include="Admin\js\login.js" />
     <Content Include="Admin\js\show.js" />
-    <Content Include="Admin\List2.html" />
+    <Content Include="Admin\index.html" />
+    <Content Include="Admin\ListPage.html" />
     <Content Include="Admin\List1.html" />
     <Content Include="Admin\List.aspx" />
     <Content Include="Admin\List.html" />
@@ -132,7 +135,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Admin\ashx\ADD.ashx" />
-    <Content Include="Admin\ashx\LIST1.ashx" />
     <Content Include="Admin\ashx\SHOW.ashx" />
     <Content Include="Admin\ashx\LOGIN.ashx" />
     <Content Include="jquery+json+ashx\jquery修改追加删除html网页中的内容示例.docx" />
@@ -140,8 +142,9 @@
     <Content Include="jquery+json+ashx\3、jquery+json+ashx-增加数据.doc" />
     <Content Include="jquery+json+ashx\4、登录功能的实现及完善增加功能.doc" />
     <Content Include="jquery+json+ashx\5、简单数据列表页的实现.doc" />
-    <Content Include="Admin\ashx\LIST.ashx" />
-    <Content Include="Admin\ashx\LIST2.ashx" />
+    <Content Include="Admin\ashx\index.ashx" />
+    <Content Include="Admin\ashx\list1.ashx" />
+    <Content Include="Admin\ashx\LISTPage.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstrap-table.js" />
@@ -203,14 +206,17 @@
     <Compile Include="Admin\ashx\ADD.ashx.cs">
       <DependentUpon>ADD.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ashx\LIST2.ashx.cs">
-      <DependentUpon>LIST2.ashx</DependentUpon>
+    <Compile Include="Admin\ashx\LISTPage.ashx.cs">
+      <DependentUpon>LISTPage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ashx\list1.ashx.cs">
+      <DependentUpon>list1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ashx\index.ashx.cs">
+      <DependentUpon>index.ashx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ashx\LIST.ashx.cs">
       <DependentUpon>LIST.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ashx\LIST1.ashx.cs">
-      <DependentUpon>LIST1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ashx\LOGIN.ashx.cs">
       <DependentUpon>LOGIN.ashx</DependentUpon>
