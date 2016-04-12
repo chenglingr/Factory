@@ -16,11 +16,16 @@
                 else {
                     $('#table').bootstrapTable({
                         data: data.Admin,//数据源
-                        pagination: true, //分页
+                      
+                        pagination: true, //是否分页
                         search: true, //显示搜索框
-                        pageSize: 4,//每页的行数
+                        pageSize: 5,//每页的行数 
+                        pageList: [5, 10, 20],
+                        pageNumber: 1,//显示的页数
                         showRefresh: true,//刷新
                         striped: true,//条纹
+                        sortName: 'adminID',
+                        sortOrder: 'desc',
 
                     });
                 }

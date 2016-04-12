@@ -21,18 +21,20 @@ namespace web.Admin.ashx
             if (action == "Show")
             {
 
-                if (context.Session["ID"] == null)
+            /*    if (context.Session["ID"] == null)
                 {
                     json = "{}";
                 }
-                else
+                else*/
                 {
+
+                   
                     BLL.Admin bll = new BLL.Admin();
                     DataSet ds = bll.GetList("");
-                    ds.Tables[0].TableName = "Admin";
-                    //返回列表
+                    ds.Tables[0].TableName = "rows";//修改数据表的名字
+                    int n = ds.Tables[0].Rows.Count;//记录条数
+                                                    //返回列表
                     json = Web.DataConvertJson.DataTable2Json(ds.Tables[0]);
-
 
 
                 }
