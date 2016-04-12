@@ -9,7 +9,7 @@ namespace web.Admin.ashx
     /// <summary>
     /// LIST 的摘要说明
     /// </summary>
-    public class LIST : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+    public class LIST1 : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -28,14 +28,26 @@ namespace web.Admin.ashx
                 else
                 {
                     BLL.Admin bll = new BLL.Admin();
-                    DataSet ds = bll.GetList(10);
+                    DataSet ds = bll.GetList("");
                     ds.Tables[0].TableName = "Admin";
                     //返回列表
                      json = Web.DataConvertJson.DataTable2Json(ds.Tables[0]);
-                                 
+                
+
+                   
                 }
             }
-
+            else if (action == "Del")
+            {
+                string DelNumS= context.Request.Form["DelNumS"];
+                BLL.Admin bll = new BLL.Admin();
+                if (bll.DeleteList(DelNumS))
+                {
+                    json = "{'info':'删除成功'}";
+                }
+                else
+                { json = "{'info':'删除失败'}"; }
+            }
             context.Response.Write(json);
         }
 

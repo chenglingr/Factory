@@ -267,11 +267,24 @@ namespace SQLServerDAL
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
-
-		/// <summary>
-		/// 获得前几行数据
-		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
+        public DataSet GetList(int Top)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" adminID,LoginID,LoginPWD,AdminName,sex ");
+            strSql.Append(" FROM Admin ");
+         
+            strSql.Append(" order by adminID desc");
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataSet GetList(int Top,string strWhere,string filedOrder)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select ");

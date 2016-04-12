@@ -31,7 +31,11 @@ namespace web.Admin.ashx
             BLL.Admin bll = new BLL.Admin();
             int n =bll.Login(txtUserName, txtPassWord);
             //返回单个文字信息
-            if (n > 0) { json = "{'info':'登录成功！','ID':"+n+"}"; context.Session["ID"] =n; }
+            if (n > 0)
+            {
+                json = "{'info':'登录成功！','ID':"+n+"}";
+                context.Session["ID"] =n;
+            }
             context.Response.Write(json);
 
         }

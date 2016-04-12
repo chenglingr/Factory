@@ -115,10 +115,17 @@ namespace BLL
 		{
 			return dal.GetList(strWhere);
 		}
-		/// <summary>
-		/// 获得前几行数据
-		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataSet GetList(int top)
+        {
+            return dal.GetList(top);
+        }
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataSet GetList(int Top,string strWhere,string filedOrder)
 		{
 			return dal.GetList(Top,strWhere,filedOrder);
 		}
