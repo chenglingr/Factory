@@ -2,7 +2,7 @@
     
         $.ajax({
             type: "Post",
-            url: "ashx/LIST2.ashx",
+            url: "ashx/index.ashx",
             data: { "Action": "Show" },
             dataType: "json",
             success: function (data) {
@@ -29,11 +29,11 @@
                         tbody.append(str);
                     });
 
-            /*        tbody = $('#top5');
-                    $.each(data.Table_AX, function (index, item) {
-                        var str = '<li>' + item.column0 + '<\li>';
+                   tbody = $('#top5');
+                    $.each(data.top5, function (index, item) {
+                        var str = '<li>' + item.AdminName + '</li>';
                         tbody.append(str);
-                    });*/
+                    });
                 }
                
             },
