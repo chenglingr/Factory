@@ -147,6 +147,7 @@
     <Content Include="jquery+json+ashx\6、数据详细信息显示页.doc" />
     <Content Include="jquery+json+ashx\7、分页显示数据页.doc" />
     <Content Include="jquery+json+ashx\8、多种数据显示页.doc" />
+    <Content Include="jquery+json+ashx\bootstrap-table-develop.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstrap-table.js" />

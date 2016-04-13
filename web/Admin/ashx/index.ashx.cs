@@ -27,7 +27,7 @@ namespace web.Admin.ashx
                     BLL.student bll1 = new BLL.student();
                     DataSet dstop5 = bll1.GetNameNoList(5);//获取前5个学生
 
-                    DataTable top5 = dstop5.Tables[0].Copy();
+                    DataTable top5 = dstop5.Tables[0].Copy();//获取数据表
                     top5.TableName = "top5"; //改名
                     ds.Tables.Add(top5);//把前5个用户的数据表，加到数据集ds中
 

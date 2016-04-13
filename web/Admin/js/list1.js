@@ -9,7 +9,7 @@
             success: function (data) {
               //  var tbody = $('#showlist');
                 //用json返回数据行时
-                if (jQuery.isEmptyObject(data)) {
+                if (jQuery.isEmptyObject(data)) { //判断是否登录
                     alert("请先登录");
                     window.location.href = "login.html";
                 }
@@ -38,7 +38,7 @@
 
         //删除按钮
         $("#BtnDel").click(function () {
-            var DelNumS = getCheck();
+            var DelNumS = getCheck();//获取选中行的人的编号
         //    alert(DelNumS);
 
             //判断是否为空。。前面是否有多余的 逗号.(如果是全选，前面会多个，)
@@ -64,7 +64,7 @@
         });
 });
 
-function SEXFormatter(value, row, index) {
+function SEXFormatter(value, row, index) { //处理性别的显示
     if (value == 'True') {
         value = '男';
     }
@@ -73,18 +73,18 @@ function SEXFormatter(value, row, index) {
     }
     return value;
 }
-function editFormatter(value, row, index) {
+function editFormatter(value, row, index) { //处理操作
    
     var str = '<a href="modify.aspx?id=' + value + '">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="show.html?UserID=' + value + '">详情</a>'
     value = str;
     return value;
 }
 
-function getCheck() {
-    var data = [];
+function getCheck() { //获取表格里选中的行 的编号
+    var data = [];//数组
     $("#table").find(":checkbox:checked").each(function () {
-        var val = $(this).parent().next().text();
+        var val = $(this).parent().next().text();//当前元素的上一级---里的下一个元素--的内容
         data.push(val);
     });
-    return data.join(",");
+    return data.join(",");//用，连接
 }
