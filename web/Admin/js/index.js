@@ -1,16 +1,17 @@
 ﻿$(document).ready(function () {
-   
+    
         $.ajax({
             type: "Post",
-            url: "ashx/LIST.ashx",
+            url: "ashx/index.ashx",
             data: { "Action": "Show" },
             dataType: "json",
             success: function (data) {
-
+               
                 var tbody = $('#showlist');
-                if (jQuery.isEmptyObject(data)) { //json数据为空
+               if (jQuery.isEmptyObject(data)) { //json数据为空
+                 
                     alert("无数据");
-                }
+               }
                 else
                 {
                     //用json返回数据行时
@@ -26,6 +27,12 @@
                         <\tr>';
                         tbody.append(str);
                     });
+
+                   tbody = $('#top5');
+                    $.each(data.top5, function (index, item) {
+                        var str = '<li>' + item. stuNo+'  '+item.stuRealName + '</li>';
+                        tbody.append(str);
+                    });
                 }
                
             },
@@ -35,4 +42,3 @@
         });
   
 });
-

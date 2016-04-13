@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-
 namespace web.Admin.ashx
 {
     /// <summary>
-    /// LIST 的摘要说明
+    /// l2 的摘要说明
     /// </summary>
-    public class LIST : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+    public class index : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -20,18 +19,27 @@ namespace web.Admin.ashx
 
             if (action == "Show")
             {
-                
-                    BLL.Admin bll = new BLL.Admin();
-                    DataSet ds = bll.GetList(10);//调用业务逻辑层的方法
-                    ds.Tables[0].TableName = "Admin";//为数据表改名
-                    //返回列表
-                    json = Web.DataConvertJson.DataTable2Json(ds.Tables[0]);//调用把datatable转为json的方法
 
-                                
+                    BLL.Admin bll = new BLL.Admin();
+                    DataSet ds = bll.GetList("");//获取所有的用户
+                    ds.Tables[0].TableName = "Admin";//修改数据表的名字
+
+                    BLL.student bll1 = new BLL.student();
+                    DataSet dstop5 = bll1.GetNameNoList(5);//获取前5个学生
+
+                    DataTable top5 = dstop5.Tables[0].Copy();
+                    top5.TableName = "top5"; //改名
+                    ds.Tables.Add(top5);//把前5个用户的数据表，加到数据集ds中
+
+                    //返回列表
+                    json = Web.DataConvertJson.Dataset2Json(ds);//转换
+
+               
             }
 
             context.Response.Write(json);
         }
+
 
         public bool IsReusable
         {

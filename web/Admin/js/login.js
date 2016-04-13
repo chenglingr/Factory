@@ -31,7 +31,7 @@
         }
     });
 
-    
+    // 下面这个按钮 为了演示jquery的代码编辑方法
     $("#BtnCancel").click(function () {
         //jquery修改/追加/删除html网页中的内容示例
         $("#result").html("—jquery专栏---");//html() 函数改变所匹配的 HTML 元素的内容（innerHTML）。

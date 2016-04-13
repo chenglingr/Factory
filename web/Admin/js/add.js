@@ -21,7 +21,7 @@ $(document).ready(function () {
      //注册提交按钮单击事件
     $("#BtnOK").click(function () {
 
-        var txtUserName = $("#txtLoginID").val(); //获取文本框的值
+         var txtUserName = $("#txtLoginID").val(); //获取文本框的值
         var txtPassWord = $("#txtLoginPWD").val();
         var txtRealName = $("#AdminName").val();
         var adminSex = true;
