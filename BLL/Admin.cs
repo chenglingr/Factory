@@ -68,7 +68,7 @@ namespace BLL
 			return dal.Delete(adminID);
 		}
 		/// <summary>
-		/// 删除一条数据
+		/// 删除多条数据
 		/// </summary>
 		public bool DeleteList(string adminIDlist )
 		{
