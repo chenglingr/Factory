@@ -22,7 +22,7 @@ namespace web.Admin.ashx
 
                 if (context.Session["ID"] == null)
                 {
-                    json = "{}";
+                   json = "{}";
                 }
                 else
                 {
