@@ -1,10 +1,7 @@
-﻿var PageCount = 0;   //总条目数
-var pageIndex = 0;     //页面索引初始值   
-var pageSize = 5;     //每页显示条数初始化，修改显示条数，修改这里即可   
-
+﻿
 $(document).ready(function () {
 
-     //  getNum();//获取记录总条数
+    
                    $('#table').bootstrapTable({
                     url:"ashx/list2.ashx",//数据源
                     sidePagination: 'server',//设置为服务器端分页
@@ -35,14 +32,15 @@ $(document).ready(function () {
         {
             $.ajax({
                 type: "post",
-                url: "ashx/LIST2.ashx",
+                url: "ashx/del.ashx",
                 data: { "Action": "Del", "DelNums": DelNumS },
                 dataType: "text",
                 success: function (data) {
                     var json = eval('(' + data + ')');
                     alert(json.info);
                     //刷新页面
-                    window.location.reload();
+                 //  window.location.reload();
+                  $('#table').bootstrapTable('refresh');
                 }
             });
 
@@ -50,21 +48,7 @@ $(document).ready(function () {
     });
 });
 
-function getNum() {
-    $.ajax({
-        type: "Post",
-        async: false, //这里要这样 才能给全局变量赋值
-        url: "ashx/getNum.ashx",
-        //方法传参的写法一定要对，str为形参的名字,str2为第二个形参的名字   
-        dataType: "text",
-        success: function (data) {
-            //返回类型为text时 要处理一下 
-            var json = eval('(' + data + ')');
-            PageCount = json.info;
 
-        }
-    });
-}
 
 function SEXFormatter(value, row, index) { //处理性别的显示
     if (value == 'True') {
