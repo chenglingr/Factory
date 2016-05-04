@@ -28,7 +28,7 @@ namespace SQLServerDAL
 	public partial class Class:IClass
 	{
 		public Class()
-		{ }
+		{  }
 		#region  Method
 
 
