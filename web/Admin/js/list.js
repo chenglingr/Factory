@@ -9,8 +9,7 @@
 
                 var tbody = $('#showlist');
                 if (jQuery.isEmptyObject(data)) { //json数据为空
-                    alert("请先登录");
-                    window.location.href = "login.html";
+                    alert("无数据");
                 }
                 else
                 {
@@ -36,3 +35,4 @@
         });
   
 });
+

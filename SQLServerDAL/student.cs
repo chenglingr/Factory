@@ -29,14 +29,27 @@ namespace SQLServerDAL
 	{
 		public student()
 		{}
-		#region  Method
+        #region  Method
 
+        public DataSet GetNameNoList(int Top)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" stuNo,stuRealName ");
+            strSql.Append(" FROM student ");
+           
+            strSql.Append(" order by stuID desc");
+            return DbHelperSQL.Query(strSql.ToString());
+        }
 
-
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public int Add(Model.student model)
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public int Add(Model.student model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();

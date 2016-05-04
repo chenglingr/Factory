@@ -8,7 +8,7 @@ namespace web.Admin.ashx
     /// <summary>
     /// l1 的摘要说明
     /// </summary>
-    public class list1 : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+    public class list1 : IHttpHandler, System.Web.SessionState.IRequiresSessionState//session接口
     {
 
         public void ProcessRequest(HttpContext context)
@@ -17,12 +17,12 @@ namespace web.Admin.ashx
             string json = "";
             string action = context.Request.Form["Action"];
 
-            if (action == "Show")
+            if (action == "Show")//显示
             {
 
                 if (context.Session["ID"] == null)
                 {
-                   json = "{}";
+                    json = "{}";//未登录
                 }
                 else
                 {
@@ -36,9 +36,9 @@ namespace web.Admin.ashx
 
                 }
             }
-            else if (action == "Del")
+            else if (action == "Del")//删除操作
             {
-                string DelNumS = context.Request.Form["DelNumS"];
+                string DelNumS = context.Request.Form["DelNumS"];//获取批量删除的编号
                 BLL.Admin bll = new BLL.Admin();
                 if (bll.DeleteList(DelNumS))
                 {

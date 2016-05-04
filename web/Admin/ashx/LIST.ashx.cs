@@ -15,25 +15,19 @@ namespace web.Admin.ashx
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            string json = "";
+            string json = "{}";
             string action = context.Request.Form["Action"];
 
             if (action == "Show")
             {
-
-                if (context.Session["ID"] == null)
-                {
-                   json="{}";
-                }
-                else
-                {
+                
                     BLL.Admin bll = new BLL.Admin();
-                    DataSet ds = bll.GetList(10);
-                    ds.Tables[0].TableName = "Admin";
+                    DataSet ds = bll.GetList(10);//调用业务逻辑层的方法
+                    ds.Tables[0].TableName = "Admin";//为数据表改名
                     //返回列表
-                     json = Web.DataConvertJson.DataTable2Json(ds.Tables[0]);
-                                 
-                }
+                    json = Web.DataConvertJson.DataTable2Json(ds.Tables[0]);//调用把datatable转为json的方法
+
+                                
             }
 
             context.Response.Write(json);
